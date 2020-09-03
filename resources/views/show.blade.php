@@ -9,9 +9,9 @@
 @endsection
 
 @section('body')
-    
+
     @foreach($product as $pr)
-    <div style="text-align:center">
+    <div style="margin: 0 auto; float:none; width: 20rem;text-align:center">
         <div class="card" style="width: 18rem;">
          <div class="card-body">
         <h5 class="card-title"> {{$pr->nameProduct}} </h5>

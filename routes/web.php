@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 Route::get('/','crudController@index');
-Route::get('/create','crudController@create');
+/*Route::get('/create','crudController@create');
 Route::get('/update','crudController@update');
 Route::get('/delete','crudController@delete');
-Route::get('/show/{id}','crudController@show');
+Route::get('/show','crudController@show');*/
+Route::resource('/crud','crudController');;
