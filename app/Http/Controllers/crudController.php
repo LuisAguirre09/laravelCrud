@@ -36,7 +36,19 @@ class crudController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product;
+
+        $product -> nameProduct=$request->nameProduct;
+        $product -> price = $request->price;
+        date_default_timezone_set('America/Mexico_city');
+        $date = date('d-m-Y h:i:s', time());
+        $product -> created_at = $date;
+        $product -> updated_at = null;
+
+        $product->save();
+
+        /*$redireccion = $this->index();
+        return $redireccion;*/
     }
 
     /**
