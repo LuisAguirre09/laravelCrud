@@ -7,13 +7,14 @@ use Illuminate\Http\Request;
 class crudController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource. php artisan route:list
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $nombres=[];
+        return view('welcome', compact("nombres"));
     }
 
     /**
@@ -23,7 +24,7 @@ class crudController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -43,9 +44,9 @@ class crudController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return view('show');
     }
 
     /**
@@ -66,9 +67,9 @@ class crudController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update()
     {
-        //
+        return view('update');
     }
 
     /**
@@ -77,8 +78,8 @@ class crudController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete()
     {
-        //
+        return view('delete');
     }
 }

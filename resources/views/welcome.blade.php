@@ -1,100 +1,35 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends("layouts.layout")
 
-        <title>Mi primera app con Lara</title>
+@section("header")
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <h4 class="lead" style="padding-left:20px">
+        Inicio
+    </h4>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+@endsection
 
-            .full-height {
-                height: 100vh;
-            }
+@section("body")
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+    @if(count($nombres))
 
-            .position-ref {
-                position: relative;
-            }
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col">Nombres</th>
+        </thead>
+        <tbody>
+        @foreach($nombres as $nombre)
+            <tr>
+            <td> {{$nombre}} </td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+    @else
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+        {{"Sin nombres"}}
 
-            .content {
-                text-align: center;
-            }
+    @endif
 
-            .title {
-                font-size: 84px;
-            }
+@endsection
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Mi</a>
-                    <a href="https://laracasts.com">nombre</a>
-                    <a href="https://vapor.laravel.com">es</a>
-                    <a href="https://laravel-news.com">Luis</a>
-                    <a href="https://blog.laravel.com">Eduardo</a>
-                    <a href="https://nova.laravel.com">Aguirre</a>
-                    <a href="https://forge.laravel.com">Fuentes</a>
-
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
