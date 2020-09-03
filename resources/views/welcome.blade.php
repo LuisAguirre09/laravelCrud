@@ -27,9 +27,9 @@
             <td> {{$product->nameProduct}} </td>
             <td> $ {{$product->price}} </td>
             <td>
-                <button type="button" class="btn btn-primary">Ver</button>
-                <button type="button" class="btn btn-secondary">Modificar</button>
-                <button type="button" class="btn btn-danger">Borrar</button>
+                <a type="button" href="{{URL::action('crudController@show', $product->id)}}" class="btn btn-primary">Ver</a>
+                <a type="button" class="btn btn-secondary">Modificar</a>
+                <a type="button" class="btn btn-danger">Borrar</a>
             </td>
             </tr>
         @endforeach
