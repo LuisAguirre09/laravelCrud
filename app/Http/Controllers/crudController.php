@@ -71,7 +71,8 @@ class crudController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        return view('edit', compact('product'));
     }
 
     /**
@@ -81,9 +82,12 @@ class crudController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update()
+    public function update(Request $request, $id)
     {
-        return view('update');
+        $product = Product::findOrFail($id);
+
+        $product-> update($request->all());
+        return redirect('/crud');
     }
 
     /**
