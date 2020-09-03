@@ -10,24 +10,34 @@
 
 @section("body")
 
-    @if(count($nombres))
+    @if(count($products))
 
     <table class="table">
         <thead class="thead-dark">
             <tr>
-            <th scope="col">Nombres</th>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre del producto</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Botones</th>
         </thead>
         <tbody>
-        @foreach($nombres as $nombre)
+        @foreach($products as $product)
             <tr>
-            <td> {{$nombre}} </td>
+            <td> {{$product->id}} </td>
+            <td> {{$product->nameProduct}} </td>
+            <td> $ {{$product->price}} </td>
+            <td>
+                <button type="button" class="btn btn-primary">Ver</button>
+                <button type="button" class="btn btn-secondary">Modificar</button>
+                <button type="button" class="btn btn-danger">Borrar</button>
+            </td>
             </tr>
         @endforeach
         </tbody>
     </table>
     @else
 
-        {{"Sin nombres"}}
+        {{"Sin productos"}}
 
     @endif
 

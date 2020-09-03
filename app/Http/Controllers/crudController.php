@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class crudController extends Controller
 {
@@ -13,8 +14,8 @@ class crudController extends Controller
      */
     public function index()
     {
-        $nombres=[];
-        return view('welcome', compact("nombres"));
+        $products=Product::all();
+        return view('welcome', compact("products"));
     }
 
     /**
