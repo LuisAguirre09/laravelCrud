@@ -45,9 +45,10 @@ class crudController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        return view('show');
+        $product = Product::where('id',$id)->get();
+        return view('show', compact('product'));
     }
 
     /**
