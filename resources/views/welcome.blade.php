@@ -25,7 +25,7 @@
             <tr>
             <td> {{$product->id}} </td>
             <td> {{$product->nameProduct}} </td>
-            <td> {{$product->price}} </td>
+            <td> $ {{$product->price}} </td>
             <td>
                 <button type="button" class="btn btn-primary">Ver</button>
                 <button type="button" class="btn btn-secondary">Modificar</button>
