@@ -47,8 +47,7 @@ class crudController extends Controller
 
         $product->save();
 
-        /*$redireccion = $this->index();
-        return $redireccion;*/
+        return redirect('/crud');
     }
 
     /**
