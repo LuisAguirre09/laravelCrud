@@ -91,8 +91,12 @@ class crudController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function delete()
+    public function destroy($id)
     {
-        return view('delete');
+        $product = Product::findOrFail($id);
+
+        $product->delete();
+
+        return redirect('/crud');
     }
 }
