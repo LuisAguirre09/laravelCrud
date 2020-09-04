@@ -26,7 +26,7 @@
             No hay cambios.
             @endif
         </p>
-        <a href="#" class="btn btn-primary">Editar</a>
+        <a href="{{URL::action('crudController@edit', $pr->id)}}" class="btn btn-primary">Editar</a>
         </div>
     </div>
 
