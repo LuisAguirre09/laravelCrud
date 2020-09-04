@@ -12,4 +12,4 @@ Route::get('/','crudController@index');
 Route::get('/update','crudController@update');
 Route::get('/delete','crudController@delete');
 Route::get('/show','crudController@show');*/
-Route::resource('/crud','crudController');;
+Route::resource('/crud','crudController');

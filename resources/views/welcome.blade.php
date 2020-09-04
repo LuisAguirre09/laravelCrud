@@ -20,8 +20,10 @@
             <td> $ {{$product->price}} </td>
             <td>
                 <a type="button" href="{{URL::action('crudController@show', $product->id)}}" class="btn btn-primary">Ver</a>
-                <a type="button" class="btn btn-secondary">Modificar</a>
-                <a type="button" class="btn btn-danger">Borrar</a>
+                <a type="button" href="{{URL::action('crudController@edit', $product->id)}}" class="btn btn-secondary">Modificar</a>
+                <a type="button" href="{{URL::action('crudController@show', $product->id)}}" class="btn btn-danger" >
+                Borrar
+                </a>
             </td>
             </tr>
         @endforeach
@@ -32,7 +34,7 @@
         {{"Sin productos"}}
 
     @endif
-
+    
 @endsection
 @section('footer')
 

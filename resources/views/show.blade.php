@@ -26,7 +26,16 @@
             No hay cambios.
             @endif
         </p>
-        <a href="{{URL::action('crudController@edit', $pr->id)}}" class="btn btn-primary">Editar</a>
+        
+        <form method="post" action="{{URL::action('crudController@destroy', $pr->id)}}">
+            {{csrf_field()}}
+            <a href="{{URL::action('crudController@edit', $pr->id)}}" class="btn btn-primary">Editar</a>
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit" class="btn btn-outline-danger">
+            Eliminar producto
+            </button>
+        </form>
+     
         </div>
     </div>
 

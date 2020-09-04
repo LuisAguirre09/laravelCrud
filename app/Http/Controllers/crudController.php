@@ -36,7 +36,18 @@ class crudController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product;
+
+        $product -> nameProduct=$request->nameProduct;
+        $product -> price = $request->price;
+        date_default_timezone_set('America/Mexico_city');
+        $date = date('d-m-Y h:i:s', time());
+        $product -> created_at = $date;
+        $product -> updated_at = null;
+
+        $product->save();
+
+        return redirect('/crud');
     }
 
     /**
@@ -59,7 +70,8 @@ class crudController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        return view('edit', compact('product'));
     }
 
     /**
@@ -69,9 +81,12 @@ class crudController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update()
+    public function update(Request $request, $id)
     {
-        return view('update');
+        $product = Product::findOrFail($id);
+
+        $product-> update($request->all());
+        return redirect('/crud');
     }
 
     /**
@@ -80,8 +95,12 @@ class crudController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function delete()
+    public function destroy($id)
     {
-        return view('delete');
+        $product = Product::findOrFail($id);
+
+        $product->delete();
+
+        return redirect('/crud');
     }
 }
