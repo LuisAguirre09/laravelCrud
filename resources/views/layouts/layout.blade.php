@@ -12,6 +12,7 @@
 
     @yield('body')
 
+    @include('layouts.footer')
     @yield('footer')
 
 </body>
