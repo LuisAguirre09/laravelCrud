@@ -2,9 +2,7 @@
 
 @section("header")
 
-    <h4 class="lead" style="padding-left:20px">
-        Ver detalle
-    </h4>
+    <br>
 
 @endsection
 
@@ -12,16 +10,18 @@
 
     @foreach($product as $pr)
     <div style="margin: 0 auto; float:none; width: 20rem;text-align:center">
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 20rem;">
          <div class="card-body">
         <h5 class="card-title"> {{$pr->nameProduct}} </h5>
         <p class="card-text">Precio: ${{$pr->price}} </p>
         <br>
-        <p class="card-text"><span style="font-weight:bold">Creado el: </span> {{$pr->created_at}} </p>
+        <p class="card-text"><span style="font-weight:bold">Creado el: </span>
+            {{date('d-m-Y h:i:s', strtotime($pr->created_at))}} 
+        </p>
         <p class="card-text">
             <span style="font-weight:bold">Modificado: </span> 
-            @if($pr->update_at)
-            {{$pr->update_at}} 
+            @if($pr->updated_at)
+            {{date('d-m-Y h:i:s', strtotime($pr->updated_at) - 18000)}} <!-- restar 5 hrs: 3600 = 1,18000= 5-->
             @else
             No hay cambios.
             @endif
