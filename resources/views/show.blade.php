@@ -26,7 +26,9 @@
             No hay cambios.
             @endif
         </p>
-        <a href="#" class="btn btn-primary">Editar</a>
+        
+
+        
         </div>
     </div>
 
