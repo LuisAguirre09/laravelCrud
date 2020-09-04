@@ -31,7 +31,13 @@
     </table>
     @else
 
-        {{"Sin productos"}}
+    <br>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">No hay productos :(</h1>
+            <p class="lead">Agrega un producto para mostrarlo en el menu principal.</p>
+        </div>
+    </div>
 
     @endif
     
