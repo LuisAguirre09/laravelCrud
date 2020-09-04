@@ -36,6 +36,13 @@ class crudController extends Controller
      */
     public function store(Request $request)
     {
+        //validacion
+        $this->validate($request, 
+                ['nameProduct'=>'required|unique:products,nameProduct',
+                 'price'=>'required|numeric|min:0']
+                );
+
+        //crear objeto product
         $product = new Product;
 
         $product -> nameProduct=$request->nameProduct;
