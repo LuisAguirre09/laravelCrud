@@ -34,4 +34,7 @@
     @endif
 
 @endsection
+@section('footer')
+
+@endsection
 
