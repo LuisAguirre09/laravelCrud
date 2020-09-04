@@ -27,7 +27,20 @@
             <td> {{$product->nameProduct}} </td>
             <td> $ {{$product->price}} </td>
             <td>
-                <a type="button" href="{{URL::action('crudController@show', $product->id)}}" class="btn btn-primary">Ver</a>
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
                 
             </td>
             </tr>
