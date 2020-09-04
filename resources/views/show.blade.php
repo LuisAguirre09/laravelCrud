@@ -35,9 +35,7 @@
             Eliminar producto
             </button>
         </form>
-        
-        
-        
+     
         </div>
     </div>
 
