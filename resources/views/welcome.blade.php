@@ -18,7 +18,7 @@
             <th scope="col">Id</th>
             <th scope="col">Nombre del producto</th>
             <th scope="col">Precio</th>
-            <th scope="col">Botones</th>
+            <th scope="col">Acciones</th>
         </thead>
         <tbody>
         @foreach($products as $product)
@@ -27,21 +27,11 @@
             <td> {{$product->nameProduct}} </td>
             <td> $ {{$product->price}} </td>
             <td>
-                
-
-
-
-
-
-
-
-
-
-
-
-
-
-                
+                <a type="button" href="{{URL::action('crudController@show', $product->id)}}" class="btn btn-primary">Ver</a>
+                <a type="button" href="{{URL::action('crudController@edit', $product->id)}}" class="btn btn-secondary">Modificar</a>
+                <a type="button" href="{{URL::action('crudController@show', $product->id)}}" class="btn btn-danger" >
+                Borrar
+                </a>
             </td>
             </tr>
         @endforeach
@@ -52,6 +42,6 @@
         {{"Sin productos"}}
 
     @endif
-
+    
 @endsection
 
